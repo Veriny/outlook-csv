@@ -9,9 +9,23 @@ def pogchamp():
     entry_2.delete(0, 'end')
     entry_3.delete(0, 'end')
     entry_4.delete(0, 'end')
+    username = c + b.lower() + a[0].lower()
+    email = username + "@aragonoutlook.org"
+    firstName = a
+    lastName = b
+    displayName = a + " " + b
+    nickName = displayName
+    desc = ""
+    photo = ""
     with open('test.csv', mode = 'a') as csv_file:
         writer = csv.writer(csv_file, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
-        writer.writerow([a, b ,c, d, a, b, c, d])
+        writer.writerow([username, email ,firstName, lastName, displayName, nickName, desc, photo])
+
+def poggers():
+    with open('test.csv', mode = 'a') as csv_file:
+        writer = csv.writer(csv_file, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
+        writer.writerow(["Username", "Email" ,"first_name", "last_name", "display_name", "nickname", "description", "cupp_upload_meta"])
+
 
 root  = Tk()
 label_1 = Label(root, text = "First Name")
@@ -42,5 +56,9 @@ entry_4.grid(row = 3, column = 1)
 
 
 button1 = Button(root, text="Submit", command = pogchamp, fg = "blue")
-button1.grid(columnspan = 2)
+button2 = Button(root, text="Add Header", command = poggers, fg = "blue")
+
+button1.grid(columnspan = 1)
+button2.grid(columnspan = 1)
+
 root.mainloop()
