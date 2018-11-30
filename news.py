@@ -16,7 +16,7 @@ def pogchamp():
     displayName = a + " " + b
     nickName = displayName
     desc = ""
-    photo = ""
+    photo = "/wp-content/uploads/2018/11/" + a + "-" b "-480x480.jpg"
     with open('test.csv', mode = 'a') as csv_file:
         writer = csv.writer(csv_file, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
         writer.writerow([username, email ,firstName, lastName, displayName, nickName, desc, photo])
@@ -34,7 +34,7 @@ label_3 = Label(root, text = "Grad Year")
 label_4 = Label(root, text = "Bio")
 
 FirstName = StringVar()
-LastName = StringVar()
+
 GradYear = StringVar()
 Bio = StringVar()
 
